@@ -88,6 +88,7 @@ public final class GameModeDbManagerTest extends CommonDbManagerTest {
         int newPlayerNb = 1;
 
         this.testEntity.setName(newName);
+        this.testEntity.setPlayerNumber(newPlayerNb);
         this.manager.updateSQLite(this.testEntity);
 
         this.testEntity = this.manager.loadSQLite(this.testEntity.getId());
