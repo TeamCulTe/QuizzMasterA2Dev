@@ -26,7 +26,7 @@
     <string name="enable_sound">Enable sound</string>
     <string name="off">Off</string>
     <string name="on">On</string>
-    
+
     <string-array name="languages">
         <item>Français</item>
         <item>English</item>
