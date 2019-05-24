@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.btn_show_score:
-//                intent = new Intent(this, ShowScoresActivity.class);
+                intent = new Intent(this, ShowScoresActivity.class);
             
             case R.id.btn_settings:
                 intent = new Intent(this, SettingsActivity.class);
