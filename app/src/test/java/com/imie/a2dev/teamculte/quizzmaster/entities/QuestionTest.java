@@ -15,26 +15,26 @@ public final class QuestionTest {
     /**
      * Stores the tested entity.
      */
-    // private Question question;
+    private Question question;
 
     @Before
     public void setUp() throws Exception {
-        // this.question = new Question();
+        this.question = new Question();
     }
 
     @Test
     public void testGetCorrectAnswer() {
-        // String valuePrefix = "value";
-        // List<Answer> answers = new ArrayList<>();
-        // int correctAnswerIndex = 1;
+        String valuePrefix = "value";
+        List<Answer> answers = new ArrayList<>();
+        int correctAnswerIndex = 1;
 
-        // for (int i = 0; i < Question.ANSWER_NB; i++) {
-        //     answers.add(new Answer(valuePrefix + String.valueOf(i)));
-        // }
+        for (int i = 0; i < Question.ANSWER_NB; i++) {
+            answers.add(new Answer(valuePrefix + String.valueOf(i)));
+        }
 
-        // this.question.setAnswers(answers);
-        // this.question.setCorrectAnswerIndex(correctAnswerIndex);
+        this.question.setAnswers(answers);
+        this.question.setCorrectAnswerIndex(correctAnswerIndex);
 
-        // assertEquals(answers.get(correctAnswerIndex), this.question.getCorrectAnswer());
+        assertEquals(answers.get(correctAnswerIndex), this.question.getCorrectAnswer());
     }
 }
