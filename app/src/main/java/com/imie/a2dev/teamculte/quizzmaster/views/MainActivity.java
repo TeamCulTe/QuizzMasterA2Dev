@@ -50,14 +50,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 new GameDbManager(this).createSQLite(game);
                 
                 if (view.getId() == R.id.btn_new_game) {
-//                    intent = new Intent(this, InitGameActivity.class);
-//                    intent.putExtra(InitGameActivity.STEP, InitGameActivity.CREATE_PLAYER_STEP);
+                    intent = new Intent(this, InitGameActivity.class);
+                    intent.putExtra(InitGameActivity.STEP, InitGameActivity.CREATE_PLAYER_STEP);
                 } else {
-//                    intent = new Intent(this, InitGameActivity.class);
-//                    intent.putExtra(InitGameActivity.STEP, InitGameActivity.LOAD_PLAYER_STEP);
+                    intent = new Intent(this, InitGameActivity.class);
+                    intent.putExtra(InitGameActivity.STEP, InitGameActivity.LOAD_PLAYER_STEP);
                 }
                 
-//                intent.putExtra(GAME_INTENT, game);
+                intent.putExtra(GAME_INTENT, game);
                 
                 break;
 
