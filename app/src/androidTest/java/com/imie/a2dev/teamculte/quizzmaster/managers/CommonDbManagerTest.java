@@ -25,12 +25,12 @@ public abstract class CommonDbManagerTest {
 
     @Before
     public void setUp() throws Exception {
-        //DbManager.setDbFileName(TEST_DB);
+        DbManager.setDbFileName(TEST_DB);
     }
 
     @After
     public void tearDown() throws Exception {
-        //this.context.deleteDatabase(TEST_DB);
+        this.context.deleteDatabase(TEST_DB);
     }
 
     /**

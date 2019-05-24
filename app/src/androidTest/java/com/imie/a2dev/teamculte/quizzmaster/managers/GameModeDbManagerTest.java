@@ -1,6 +1,7 @@
 package com.imie.a2dev.teamculte.quizzmaster.managers;
 
 import android.support.test.runner.AndroidJUnit4;
+import com.imie.a2dev.teamculte.quizzmaster.entities.dbentities.GameMode;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -29,34 +30,34 @@ public final class GameModeDbManagerTest extends CommonDbManagerTest {
     /**
      * Stores the associated DbManager.
      */
-    // private GameModeDbManager manager;
+    private GameModeDbManager manager;
 
     /**
      * Stores the test entity.
      */
-    // private GameMode testEntity;
+    private GameMode testEntity;
 
-    // /**
-    //  * Gets the testEntity attribute.
-    //  * @return The GameMode value of testEntity attribute.
-    //  */
-    // public GameMode getTestEntity() {
-    //     return this.testEntity;
-    // }
+    /**
+     * Gets the testEntity attribute.
+     * @return The GameMode value of testEntity attribute.
+     */
+    public GameMode getTestEntity() {
+        return this.testEntity;
+    }
 
-    // /**
-    //  * Sets the testEntity attribute.
-    //  * @param newTestEntity The new GameMode value to set.
-    //  */
-    // public void setTestEntity(GameMode newTestEntity) {
-    //     this.testEntity = newTestEntity;
-    // }
+    /**
+     * Sets the testEntity attribute.
+     * @param newTestEntity The new GameMode value to set.
+     */
+    public void setTestEntity(GameMode newTestEntity) {
+        this.testEntity = newTestEntity;
+    }
 
     @Before
     public void setUp() throws Exception {
         super.setUp();
-        // this.manager = new GameModeDbManager(this.context);
-        // this.initTestEntity();
+        this.manager = new GameModeDbManager(this.context);
+        this.initTestEntity();
     }
 
     @After
@@ -66,63 +67,63 @@ public final class GameModeDbManagerTest extends CommonDbManagerTest {
 
     @Test
     public void testCreateSQLite() {
-        // assertTrue(this.testEntity.getId() != 0);
-        // assertEquals(this.testEntity.getName(), TEST_NAME);
-        // assertEquals(this.testEntity.getPlayerNumber(), TEST_PLAYER_NUMBER);
+        assertTrue(this.testEntity.getId() != 0);
+        assertEquals(this.testEntity.getName(), TEST_NAME);
+        assertEquals(this.testEntity.getPlayerNumber(), TEST_PLAYER_NUMBER);
     }
 
     @Test
     public void testLoadSQLite() {
-        // GameMode loaded = this.manager.loadSQLite(this.testEntity.getId());
+        GameMode loaded = this.manager.loadSQLite(this.testEntity.getId());
 
-        // assertNotNull(loaded);
-        // assertEquals(this.testEntity.getId(), loaded.getId());
-        // assertEquals(this.testEntity.getName(), loaded.getName());
-        // assertEquals(this.testEntity.getPlayerNumber(), loaded.getPlayerNumber());
+        assertNotNull(loaded);
+        assertEquals(this.testEntity.getId(), loaded.getId());
+        assertEquals(this.testEntity.getName(), loaded.getName());
+        assertEquals(this.testEntity.getPlayerNumber(), loaded.getPlayerNumber());
     }
 
     @Test
     public void testUpdateSQLite() {
-        // String newName = "newName";
-        // int newPlayerNb = 1;
+        String newName = "newName";
+        int newPlayerNb = 1;
 
-        // this.testEntity.setName(newName);
-        // this.manager.updateSQLite(this.testEntity);
+        this.testEntity.setName(newName);
+        this.manager.updateSQLite(this.testEntity);
 
-        // this.testEntity = this.manager.loadSQLite(this.testEntity.getId());
+        this.testEntity = this.manager.loadSQLite(this.testEntity.getId());
 
-        // assertNotNull(this.testEntity);
-        // assertEquals(newName, this.testEntity.getName());
-        // assertEquals(newPlayerNb, this.testEntity.getPlayerNumber());
+        assertNotNull(this.testEntity);
+        assertEquals(newName, this.testEntity.getName());
+        assertEquals(newPlayerNb, this.testEntity.getPlayerNumber());
     }
 
     @Test
     public void testDeleteSQLite() {
-        // this.manager.deleteSQLite(this.testEntity.getId());
+        this.manager.deleteSQLite(this.testEntity.getId());
 
-        // assertNull(this.manager.loadSQLite(this.testEntity.getId()));
+        assertNull(this.manager.loadSQLite(this.testEntity.getId()));
     }
 
     @Test
     public void testCountSQLite() {
-        // assertEquals(1, this.manager.countSQLite());
+        assertEquals(1, this.manager.countSQLite());
     }
 
     @Test
     public void testQueryAllSQLite() {
-        // GameMode secMode = new GameMode("SecMode", 1);
+        GameMode secMode = new GameMode("SecMode", 1);
 
-        // this.manager.createSQLite(secMode);
+        this.manager.createSQLite(secMode);
 
-        // assertEquals(2, this.manager.queryAllSQLite().size());
+        assertEquals(2, this.manager.queryAllSQLite().size());
     }
 
     @Override
     protected void initTestEntity() {
-        // GameMode mode = new GameMode(TEST_NAME, TEST_PLAYER_NUMBER);
+        GameMode mode = new GameMode(TEST_NAME, TEST_PLAYER_NUMBER);
 
-        // this.manager.createSQLite(mode);
+        this.manager.createSQLite(mode);
 
-        // this.testEntity = mode;
+        this.testEntity = mode;
     }
 }
