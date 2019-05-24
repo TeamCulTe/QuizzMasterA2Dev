@@ -39,7 +39,7 @@ public class InitGameActivity extends AppCompatActivity {
     /**
      * Stores the current game.
      */
-    private Game game;
+    private transient Game game;
 
     /**
      * Gets the game attribute.

@@ -2,13 +2,14 @@ package com.imie.a2dev.teamculte.quizzmaster.entities;
 
 import com.imie.a2dev.teamculte.quizzmaster.entities.dbentities.Difficulty;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Class defining a question in the game.
  */
-public final class Question {
+public final class Question implements Serializable {
     /**
      * Defines the number of possible answer per question.
      */

@@ -2,10 +2,13 @@ package com.imie.a2dev.teamculte.quizzmaster.views;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 import com.imie.a2dev.teamculte.quizzmaster.R;
 import com.imie.a2dev.teamculte.quizzmaster.entities.dbentities.Player;
 import com.imie.a2dev.teamculte.quizzmaster.managers.PlayerDbManager;
@@ -48,6 +51,9 @@ public class LoadPlayerFragment extends Fragment implements PlayerRecyclerViewAd
      */
     private void init(View view) {
         this.recyclerPlayerList = view.findViewById(R.id.recycler_player_list);
+        
+        this.recyclerPlayerList.setLayoutManager(new LinearLayoutManager(this.getContext()));
+        
         this.playerRecyclerViewAdapter =
                 new PlayerRecyclerViewAdapter(new PlayerDbManager(this.getContext()).queryAllSQLite());
         
@@ -59,7 +65,10 @@ public class LoadPlayerFragment extends Fragment implements PlayerRecyclerViewAd
     @Override
     public void playerRowSelected(Player player) {
         this.getRealActivity().getGame().getPlayers().add(player);
-        this.getRealActivity().replaceFragment(new CreateQuestionFragment());
+        Toast.makeText(this.getContext(), R.string.player_selected, Toast.LENGTH_LONG).show();
+        if (this.getRealActivity().getGame().getPlayers().size() == this.getRealActivity().getGame().getMode().getPlayerNumber()) {
+            this.getRealActivity().replaceFragment(new CreateQuestionFragment());
+        }
     }
 
     /**

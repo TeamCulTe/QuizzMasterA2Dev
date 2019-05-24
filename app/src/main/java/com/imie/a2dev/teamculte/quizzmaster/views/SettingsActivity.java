@@ -1,12 +1,18 @@
 package com.imie.a2dev.teamculte.quizzmaster.views;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Spinner;
 import android.widget.Switch;
 import com.imie.a2dev.teamculte.quizzmaster.R;
+
+import java.util.Locale;
 
 /**
  * Activity managing the settings of the app.
@@ -85,7 +91,21 @@ public class SettingsActivity extends AppCompatActivity {
         
         editor.putString(LANGUAGE_TAG, this.spinnerLanguage.getSelectedItem().toString());
         editor.putBoolean(SOUND_TAG, this.switchSound.isChecked());
-        
         editor.apply();
+
+        this.setLocale(this.spinnerLanguage.getSelectedItem().toString());
+    }
+
+    /**
+     * Changes the app language.
+     * @param lang The lang to set.
+     */
+    public void setLocale(String lang) {
+        Locale myLocale = new Locale(lang);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale = myLocale;
+        res.updateConfiguration(conf, dm);
     }
 }

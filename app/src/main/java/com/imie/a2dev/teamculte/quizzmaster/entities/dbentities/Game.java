@@ -3,6 +3,7 @@ package com.imie.a2dev.teamculte.quizzmaster.entities.dbentities;
 import android.database.Cursor;
 import com.imie.a2dev.teamculte.quizzmaster.entities.Question;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,14 +14,14 @@ import static com.imie.a2dev.teamculte.quizzmaster.schemas.AbstractGameModeDbSch
  */
 public final class Game extends DbEntity {
     /**
-     * Defines the number of players in the game.
-     */
-    public static final int PLAYER_NB = 2;
-
-    /**
      * Defines the number of questions in a game.
      */
-    public static final int QUESTION_NB = 10;
+    public static final int QUESTION_NB = 2;
+
+    /**
+     * Defines the timeout to answer to the questions (in seconds).
+     */
+    public static final int ANSWERING_TIME = 10;
 
     /**
      * Stores the mode of the game.

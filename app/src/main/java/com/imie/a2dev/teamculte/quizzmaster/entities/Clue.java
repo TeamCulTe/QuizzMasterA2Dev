@@ -1,9 +1,11 @@
 package com.imie.a2dev.teamculte.quizzmaster.entities;
 
+import java.io.Serializable;
+
 /**
  * Class defining a clue for a specific question in the app.
  */
-public final class Clue {
+public final class Clue implements Serializable {
     /**
      *
      */

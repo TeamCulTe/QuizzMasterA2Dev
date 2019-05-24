@@ -50,9 +50,8 @@ public class CreatePlayerFragment extends Fragment implements View.OnClickListen
             if (CreatePlayerFragment.this.validateData() && !this.getRealActivity().hasAllPlayers()) {
                 Player player = new Player(this.editTxtPlayer.getText().toString());
 
-                new PlayerDbManager(CreatePlayerFragment.this.getContext()).createSQLite(player);
-
-
+                new PlayerDbManager(this.getContext()).createSQLite(player);
+                
                 this.getRealActivity().getGame().getPlayers().add(player);
 
                 if (this.getRealActivity().hasAllPlayers()) {

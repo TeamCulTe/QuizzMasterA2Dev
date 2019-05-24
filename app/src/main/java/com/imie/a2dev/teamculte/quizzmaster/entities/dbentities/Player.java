@@ -23,6 +23,11 @@ public final class Player extends DbEntity {
      * Defines the player's game difficulty.
      */
     private Difficulty difficulty;
+
+    /**
+     * Stores the number of bonuses
+     */
+    private int bonuses;
     
     /**
      * Default constructor.
@@ -37,6 +42,7 @@ public final class Player extends DbEntity {
     public Player(String name) {
         this.name = name;
         this.points = 0;
+        this.bonuses = 0;
     }
 
     /**
@@ -47,6 +53,7 @@ public final class Player extends DbEntity {
     public Player(String name, Difficulty difficulty) {
         this.name = name;
         this.points = 0;
+        this.bonuses = 0;
         this.difficulty = difficulty;
     }
     
@@ -118,6 +125,22 @@ public final class Player extends DbEntity {
      */
     public void setDifficulty(Difficulty newDifficulty) {
         this.difficulty = newDifficulty;
+    }
+
+    /**
+     * Gets the bonuses attribute.
+     * @return The int value of bonuses attribute.
+     */
+    public int getBonuses() {
+        return this.bonuses;
+    }
+
+    /**
+     * Sets the bonuses attribute.
+     * @param newBonuses The new int value to set.
+     */
+    public void setBonuses(int newBonuses) {
+        this.bonuses = newBonuses;
     }
 
     @Override
