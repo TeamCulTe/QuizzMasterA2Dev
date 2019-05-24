@@ -7,12 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.imie.a2dev.teamculte.quizzmaster.R;
+import com.imie.a2dev.teamculte.quizzmaster.entities.dbentities.Player;
+import com.imie.a2dev.teamculte.quizzmaster.managers.PlayerDbManager;
 import com.imie.a2dev.teamculte.quizzmaster.views.adapters.PlayerRecyclerViewAdapter;
 
 /**
  * Fragment managing the player loading.
  */
-public class LoadPlayerFragment extends Fragment {
+public class LoadPlayerFragment extends Fragment implements PlayerRecyclerViewAdapter.PlayerRowListener {
     /**
      * Stores the player list.
      */
@@ -33,7 +35,11 @@ public class LoadPlayerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         
-        return inflater.inflate(R.layout.fragment_load_player, container, false);
+        View view = inflater.inflate(R.layout.fragment_load_player, container, false);
+        
+        this.init(view);
+        
+        return view;
     }
 
     /**
@@ -41,6 +47,26 @@ public class LoadPlayerFragment extends Fragment {
      * @param view The fragment's view.
      */
     private void init(View view) {
+        this.recyclerPlayerList = view.findViewById(R.id.recycler_player_list);
+        this.playerRecyclerViewAdapter =
+                new PlayerRecyclerViewAdapter(new PlayerDbManager(this.getContext()).queryAllSQLite());
         
+        this.playerRecyclerViewAdapter.setListener(this);
+        
+        this.recyclerPlayerList.setAdapter(this.playerRecyclerViewAdapter);
+    }
+
+    @Override
+    public void playerRowSelected(Player player) {
+        this.getRealActivity().getGame().getPlayers().add(player);
+        this.getRealActivity().replaceFragment(new CreateQuestionFragment());
+    }
+
+    /**
+     * Gets the real activity managing the fragment.
+     * @return The activity.
+     */
+    private InitGameActivity getRealActivity() {
+        return (InitGameActivity) this.getActivity();
     }
 }

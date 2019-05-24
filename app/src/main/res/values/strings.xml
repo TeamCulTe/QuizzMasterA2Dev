@@ -26,7 +26,13 @@
     <string name="enable_sound">Enable sound</string>
     <string name="off">Off</string>
     <string name="on">On</string>
+<<<<<<< Updated upstream
 
+=======
+    <string name="first_player_questions">First player questions</string>
+    <string name="next_player_questions">Next player questions</string>
+    
+>>>>>>> Stashed changes
     <string-array name="languages">
         <item>Français</item>
         <item>English</item>

@@ -59,6 +59,7 @@ public class CreatePlayerFragment extends Fragment implements View.OnClickListen
                     this.getRealActivity().replaceFragment(new CreateQuestionFragment());
                 } else {
                     this.clearFields();
+                    this.updateTitle();
                 }
             } else if (!CreatePlayerFragment.this.validateData()) {
                 this.txtError.setText(R.string.player_name_take);
@@ -78,11 +79,7 @@ public class CreatePlayerFragment extends Fragment implements View.OnClickListen
         this.editTxtPlayer = view.findViewById(R.id.edit_txt_player);
         this.txtError = view.findViewById(R.id.txt_error);
 
-        String title = String.format(this.getString(R.string.create_player_replacement),
-                String.valueOf(this.getRealActivity().getGame().getPlayers().size() + 1),
-                String.valueOf(this.getRealActivity().getGame().getMode().getPlayerNumber()));
-        
-        this.txtTitle.setText(title);
+        this.updateTitle();
         
         view.findViewById(R.id.btn_validate).setOnClickListener(this);
         view.findViewById(R.id.btn_load_player).setOnClickListener(this);
@@ -92,13 +89,19 @@ public class CreatePlayerFragment extends Fragment implements View.OnClickListen
      * Clears all the fields.
      */
     private void clearFields() {
+        this.txtError.setText("");
+        this.editTxtPlayer.setText("");
+        this.txtError.setVisibility(View.INVISIBLE);
+    }
+
+    /**
+     * Updates the title.
+     */
+    private void updateTitle() {
         String title = String.format(this.getString(R.string.create_player_replacement),
                 String.valueOf(this.getRealActivity().getGame().getPlayers().size() + 1),
                 String.valueOf(this.getRealActivity().getGame().getMode().getPlayerNumber()));
-        
-        this.editTxtPlayer.setText("");
-        this.txtError.setText("");
-        this.txtError.setVisibility(View.INVISIBLE);
+
         this.txtTitle.setText(title);
     }
 

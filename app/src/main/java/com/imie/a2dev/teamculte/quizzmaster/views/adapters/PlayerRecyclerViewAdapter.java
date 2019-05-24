@@ -16,7 +16,11 @@ import java.util.List;
  * Custom recycler view adapter used to display the list of players.
  */
 public final class PlayerRecyclerViewAdapter extends RecyclerView.Adapter<PlayerRecyclerViewAdapter.PlayerViewHolder> {
-
+    /**
+     * Stores the associated listener.
+     */
+    private PlayerRowListener listener;
+    
     /**
      * Stores the list of players to display.
      */
@@ -30,6 +34,22 @@ public final class PlayerRecyclerViewAdapter extends RecyclerView.Adapter<Player
         this.players = players;
     }
 
+    /**
+     * Gets the listener attribute.
+     * @return The PlayerRowListener value of listener attribute.
+     */
+    public PlayerRowListener getListener() {
+        return this.listener;
+    }
+
+    /**
+     * Sets the listener attribute.
+     * @param newListener The new PlayerRowListener value to set.
+     */
+    public void setListener(PlayerRowListener newListener) {
+        this.listener = newListener;
+    }
+    
     @Override
     public PlayerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_question, parent, false);
@@ -72,6 +92,15 @@ public final class PlayerRecyclerViewAdapter extends RecyclerView.Adapter<Player
          */
         private void bind(Player player) {
             this.txtPlayerName.setText(player.getName());
+            this.txtPlayerName.setOnClickListener(
+                    view -> PlayerRecyclerViewAdapter.this.listener.playerRowSelected(player));
         }
+    }
+
+    /**
+     * Listener interface used to notify when a player row is selected.
+     */
+    public interface PlayerRowListener {
+        void playerRowSelected(Player player);
     }
 }

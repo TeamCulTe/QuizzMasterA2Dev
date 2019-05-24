@@ -11,13 +11,24 @@ import com.imie.a2dev.teamculte.quizzmaster.R;
  * Fragment managing the playing phases.
  */
 public class PlayFragment extends Fragment {
+    /**
+     * Default constructor.
+     */
     public PlayFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_play, container, false);
+    }
+
+    /**
+     * Initializes the fragment's view components.
+     * @param view The fragment's view.
+     */
+    private void init(View view) {
+        
     }
 }
