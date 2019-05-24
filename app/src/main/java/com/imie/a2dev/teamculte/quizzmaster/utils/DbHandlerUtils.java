@@ -8,11 +8,12 @@ import com.imie.a2dev.teamculte.quizzmaster.schemas.AbstractGameDbSchema;
 import com.imie.a2dev.teamculte.quizzmaster.schemas.AbstractGameModeDbSchema;
 import com.imie.a2dev.teamculte.quizzmaster.schemas.AbstractGamesPlayersDifficultiesDbSchema;
 import com.imie.a2dev.teamculte.quizzmaster.schemas.AbstractPlayerDbSchema;
+import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 /**
  * Class used to manage database structure (tables, upgrades...).
  */
-public final class DbHandlerUtils extends SQLiteOpenHelper {
+public final class DbHandlerUtils extends SQLiteAssetHelper {
     /**
      * Defines the drop statement.
      */
@@ -30,11 +31,6 @@ public final class DbHandlerUtils extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
-        this.create(db);
-    }
-
-    @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL(String.format(DROP_STATEMENT, AbstractDifficultyDbSchema.TABLE));
         db.execSQL(String.format(DROP_STATEMENT, AbstractGameDbSchema.TABLE));
@@ -42,7 +38,7 @@ public final class DbHandlerUtils extends SQLiteOpenHelper {
         db.execSQL(String.format(DROP_STATEMENT, AbstractGamesPlayersDifficultiesDbSchema.TABLE));
         db.execSQL(String.format(DROP_STATEMENT, AbstractPlayerDbSchema.TABLE));
 
-        this.onCreate(db);
+        this.create(db);
     }
 
     /**

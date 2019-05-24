@@ -7,7 +7,7 @@ public abstract class AbstractGameModeDbSchema {
     /**
      * Define the table name.
      */
-    public static final String TABLE = "GameModel";
+    public static final String TABLE = "GameMode";
     
     /**
      * Define the name of the id field.
