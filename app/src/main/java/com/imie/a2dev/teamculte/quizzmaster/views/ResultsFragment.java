@@ -20,4 +20,12 @@ public class ResultsFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_results, container, false);
     }
+    
+    /**
+     * Gets the real activity managing the fragment.
+     * @return The activity.
+     */
+    private GameActivity getRealActivity() {
+        return (GameActivity) this.getActivity();
+    }
 }

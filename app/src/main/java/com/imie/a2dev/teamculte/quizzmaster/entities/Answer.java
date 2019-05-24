@@ -1,9 +1,11 @@
 package com.imie.a2dev.teamculte.quizzmaster.entities;
 
+import java.io.Serializable;
+
 /**
  * Class defining an answer in the app.
  */
-public final class Answer {
+public final class Answer implements Serializable {
     /**
      * Stores the answer value.
      */

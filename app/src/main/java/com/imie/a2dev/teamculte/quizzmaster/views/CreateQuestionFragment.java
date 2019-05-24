@@ -1,7 +1,9 @@
 package com.imie.a2dev.teamculte.quizzmaster.views;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,15 +16,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.imie.a2dev.teamculte.quizzmaster.R;
 import com.imie.a2dev.teamculte.quizzmaster.entities.Answer;
+import com.imie.a2dev.teamculte.quizzmaster.entities.Category;
 import com.imie.a2dev.teamculte.quizzmaster.entities.Clue;
 import com.imie.a2dev.teamculte.quizzmaster.entities.Question;
 import com.imie.a2dev.teamculte.quizzmaster.entities.dbentities.Difficulty;
+import com.imie.a2dev.teamculte.quizzmaster.entities.dbentities.Game;
 import com.imie.a2dev.teamculte.quizzmaster.managers.DifficultyDbManager;
 import com.imie.a2dev.teamculte.quizzmaster.views.adapters.DifficultySpinnerAdapter;
 import com.imie.a2dev.teamculte.quizzmaster.views.adapters.QuestionRecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.imie.a2dev.teamculte.quizzmaster.views.MainActivity.GAME_INTENT;
 
 /**
  * Fragment managing the player creation.
@@ -64,6 +70,11 @@ public class CreateQuestionFragment extends Fragment implements View.OnClickList
     private EditText editTxtClue;
 
     /**
+     * Stores the category edit text.
+     */
+    private EditText editTxtCategory;
+
+    /**
      * Stores the difficulty spinner.
      */
     private Spinner spinnerDifficulty;
@@ -89,6 +100,11 @@ public class CreateQuestionFragment extends Fragment implements View.OnClickList
     private QuestionRecyclerViewAdapter questionAdapter;
 
     /**
+     * Stores the fragment's view.
+     */
+    private View content;
+
+    /**
      * Defaukt constructor.
      */
     public CreateQuestionFragment() {
@@ -101,14 +117,31 @@ public class CreateQuestionFragment extends Fragment implements View.OnClickList
         
         this.init(view);
         
+        this.content = view; 
+        
         return view;
     }
 
     @Override
     public void onClick(View view) {
-        if (view.getId() == R.id.btn_validate) {
+        if (view.getId() == R.id.btn_create_question) {
             if (this.validateData()) {
                 this.onValidateClick();
+
+                if (!this.getRealActivity().hasAllQuestions()) {
+                    this.clearFields();
+                    this.updateTitle();
+                    
+                    if (this.getRealActivity().getGame().getQuestions().size() == Game.QUESTION_NB) {
+                        Toast.makeText(this.getContext(), R.string.next_player_questions, Toast.LENGTH_LONG).show();
+                    }
+                } else { 
+                    Intent intent = new Intent(this.getContext(), GameActivity.class);
+
+                    intent.putExtra(GAME_INTENT, this.getRealActivity().getGame());
+
+                    this.getRealActivity().startActivity(intent);
+                }
             } else {
                 Toast.makeText(this.getContext(), R.string.invalid_fields, Toast.LENGTH_SHORT).show();
             }
@@ -127,6 +160,7 @@ public class CreateQuestionFragment extends Fragment implements View.OnClickList
         this.editTxtAnswer3 = view.findViewById(R.id.edit_txt_answer_3);
         this.editTxtAnswer4 = view.findViewById(R.id.edit_txt_answer_4);
         this.editTxtClue = view.findViewById(R.id.edit_txt_clue);
+        this.editTxtCategory = view.findViewById(R.id.edit_txt_question_category);
         this.spinnerDifficulty = view.findViewById(R.id.spinner_question_difficulty);
         this.radioGroupCorrectAnswer = view.findViewById(R.id.radio_group_correct_answer);
         this.recyclerQuestionsList = view.findViewById(R.id.recycler_question_list);
@@ -137,12 +171,12 @@ public class CreateQuestionFragment extends Fragment implements View.OnClickList
         
         this.spinnerDifficulty.setAdapter(this.difficultyAdapter);
         this.recyclerQuestionsList.setAdapter(this.questionAdapter);
+        this.recyclerQuestionsList.setLayoutManager(new LinearLayoutManager(this.getContext()));
+        
+        view.findViewById(R.id.btn_create_question).setOnClickListener(this);
 
-        String title = (String.format(this.getString(R.string.create_question_replacement),
-                String.valueOf(this.getRealActivity().getGame().getQuestions().size()),
-                String.valueOf(Question.ANSWER_NB)));
-
-        this.txtTitle.setText(title);
+        this.updateTitle();
+        Toast.makeText(this.getContext(), R.string.first_player_questions, Toast.LENGTH_LONG).show();
     }
 
     /**
@@ -156,26 +190,43 @@ public class CreateQuestionFragment extends Fragment implements View.OnClickList
                 !this.editTxtAnswer2.getText().toString().equals("") &&
                 !this.editTxtAnswer3.getText().toString().equals("") &&
                 !this.editTxtAnswer4.getText().toString().equals("") &&
-                !this.editTxtClue.getText().toString().equals(""));
+                !this.editTxtClue.getText().toString().equals("") &&
+                !this.editTxtCategory.getText().toString().equals("") &&
+                this.radioGroupCorrectAnswer.getCheckedRadioButtonId() != -1);
     }
 
     /**
      * Clears all the fields.
      */
     private void clearFields() {
-        String title = (String.format(this.getString(R.string.create_question_replacement),
-                String.valueOf(this.getRealActivity().getGame().getQuestions().size()),
-                String.valueOf(Question.ANSWER_NB)));
-        
-        this.txtTitle.setText(title);
         this.editTxtQuestion.setText("");
         this.editTxtAnswer1.setText("");
         this.editTxtAnswer2.setText("");
         this.editTxtAnswer3.setText("");
         this.editTxtAnswer4.setText("");
         this.editTxtClue.setText("");
-        ((RadioButton) this.getView().findViewById(
+        this.editTxtCategory.setText("");
+        ((RadioButton) this.content.findViewById(
                 this.radioGroupCorrectAnswer.getCheckedRadioButtonId())).setChecked(false);
+    }
+
+    /**
+     * Updates the title.
+     */
+    private void updateTitle() {
+        int currentQuestion;
+        
+        if (this.getRealActivity().getGame().getMode().getPlayerNumber() != 1) {
+            currentQuestion = this.getRealActivity().getGame().getQuestions().size() + 1;
+        } else {
+            currentQuestion =
+                    this.getRealActivity().getGame().getQuestions().size() + 1 / this.getRealActivity().getGame().getMode().getPlayerNumber();
+        }
+        String title = (String.format(this.getString(R.string.create_question_replacement),
+                String.valueOf(currentQuestion),
+                String.valueOf(Game.QUESTION_NB)));
+
+        this.txtTitle.setText(title);
     }
 
     /**
@@ -186,6 +237,7 @@ public class CreateQuestionFragment extends Fragment implements View.OnClickList
         int correctAnswerIndex;
         Difficulty difficulty = this.difficultyAdapter.getItem(this.spinnerDifficulty.getSelectedItemPosition());
         Clue clue = new Clue(this.editTxtClue.getText().toString());
+        Category category = new Category(this.editTxtCategory.getText().toString());
         List<Answer> answers = new ArrayList<>();
         
         answers.add(new Answer(this.editTxtAnswer1.getText().toString()));
@@ -215,12 +267,15 @@ public class CreateQuestionFragment extends Fragment implements View.OnClickList
                 return;
         }
         
-        this.getRealActivity().getGame().getQuestions().add(new Question(this.editTxtQuestion.getText().toString(), 
-                correctAnswerIndex, 
+        Question created = new Question(this.editTxtQuestion.getText().toString(),
+                correctAnswerIndex,
                 difficulty,
                 clue,
-                answers, 
-                imagePath));
+                category,
+                answers,
+                imagePath);
+        
+        this.getRealActivity().getGame().getQuestions().add(created);
         this.questionAdapter.notifyDataSetChanged();
     }
 

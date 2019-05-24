@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.imie.a2dev.teamculte.quizzmaster.R;
 import com.imie.a2dev.teamculte.quizzmaster.entities.dbentities.Game;
+import com.imie.a2dev.teamculte.quizzmaster.entities.dbentities.GameMode;
 
 import static com.imie.a2dev.teamculte.quizzmaster.views.MainActivity.GAME_INTENT;
 
@@ -38,7 +39,7 @@ public class InitGameActivity extends AppCompatActivity {
     /**
      * Stores the current game.
      */
-    private Game game;
+    private transient Game game;
 
     /**
      * Gets the game attribute.
@@ -64,6 +65,14 @@ public class InitGameActivity extends AppCompatActivity {
         return this.game.getMode().getPlayerNumber() == this.game.getPlayers().size();
     }
 
+    /**
+     * Checks if all the questions has been set.
+     * @return True if so else false.
+     */
+    public boolean hasAllQuestions() {
+        return this.game.getQuestions().size() == Game.QUESTION_NB * this.getGame().getPlayers().size();
+    }
+    
     /**
      * Replaces the content fragment.
      * @param fragment The fragment to push.

@@ -26,9 +26,25 @@
     <string name="enable_sound">Enable sound</string>
     <string name="off">Off</string>
     <string name="on">On</string>
+    <string name="first_player_questions">First player questions</string>
+    <string name="next_player_questions">Next player questions</string>
+    <string name="question_category">Question category</string>
+    <string name="question_difficulty">Question difficulty</string>
+    <string name="current_player">Current player</string>
+    <string name="question_timer">Question timer</string>
+    <string name="s_s">%s/%s</string>
+    <string name="skip">Skip</string>
+    <string name="remove_one">Remove one</string>
+    <string name="current_question">Current question</string>
+    <string name="player_found_answer">Well done, the player %s found the answer</string>
+    <string name="wrong_answer">Wrong answer, the correct answer was the number %s</string>
+    <string name="player_turn">It\'s %s\'s turn</string>
+    <string name="time_over">Time is over !</string>
+    <string name="player_selected">Player selected !</string>
+    <string name="no_bonus">You don\'t have enough bonus point</string>
 
     <string-array name="languages">
-        <item>Français</item>
-        <item>English</item>
+        <item>fr</item>
+        <item>en</item>
     </string-array>
 </resources>

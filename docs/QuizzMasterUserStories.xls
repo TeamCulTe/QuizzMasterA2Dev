@@ -1,0 +1,604 @@
+<?xml version='1.0'?>
+<?mso-application progid='Excel.Sheet'?>
+<s:Workbook xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:s="urn:schemas-microsoft-com:office:spreadsheet">
+  <s:Worksheet s:Name="Tasks">
+    <s:Table>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">Task Title</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Description</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Due Date</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Priority</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Project</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Assigned to</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Task Effort</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Dev] : Create the show scores activity</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Create the activity displaying the scores of the previous games
+</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Dev] : Create the game activity</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Create the game activity where users can play the game by answering the questions (PlayFragment) and at the end see the results (ResultsFragment)
+</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Dev] : Create the init game activity</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Create the activity and its fragments (create player / load player / create questions)
+</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Dev] : Create the settings activity</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Create the settings activity where the user can switch language from fr to en and enable or disable sounds
+</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Dev] : Create the home screen</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Develop the home screen asking the user to play new game (with mode), see the scores, or go to settings
+</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Dev] : Create the views</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Create the view structure for the app (activities, fragment, adapter and xml layout files )
+</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Dev] : Create the managers classes</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Create the manager classes used to manage entities into database
+</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Dev] : Create the entities</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Create the entities according to the class diagram
+</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Dev] : Create the use case diagram</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Dev] : Create the sequence diagram</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Dev] : Create the activity diagram</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Dev] : Create the database</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Create the database structure and import as .db files for the app
+</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Dev] : Create instrumentalized tests</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Create instrumentalized tests for the app (testing database manager classes...)
+</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Dev] : Create MLC / MCD for db</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Create the MCD and MLD for database structure
+</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Dev] : Create class diagram</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Create the class diagram of the app
+</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Dev] : Unit tests on the app</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Create the unit tests for the app
+</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Client] : Question editing feature</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">The players should be able to edit the questions, the answers (4 per question), a clue, the difficulty and the category
+</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Client] : Question category feature</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">The questions should have a category
+</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Client] : Question difficulty feature</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Choice between 3 difficulties
+</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Client] : App settings for lang / sound</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Setting feature for switching language (fr-en) and on/off sounds
+</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Client] : Bonus when correct answer</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">For each correct answer, the player win a bonus that can be used on future questions
+</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Client] : 10 questions / player</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Each game should ask 10 question to each players, the players can use bonuses if they have some in order to remove a possible answer or getting the clue
+</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Client] : Game playable 1/2 players</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Game should be playable 1 player vs IA or player vs player
+</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">[Client] : Quizz game app</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Create a quizz game app on android
+</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">05/27/2019</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Medium</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">QuizzMaster</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">jeremy coley</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">0hr :0m</s:Data>
+        </s:Cell>
+      </s:Row>
+    </s:Table>
+  </s:Worksheet>
+</s:Workbook>

@@ -2,13 +2,14 @@ package com.imie.a2dev.teamculte.quizzmaster.entities;
 
 import com.imie.a2dev.teamculte.quizzmaster.entities.dbentities.Difficulty;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Class defining a question in the game.
  */
-public final class Question {
+public final class Question implements Serializable {
     /**
      * Defines the number of possible answer per question.
      */
@@ -45,6 +46,11 @@ public final class Question {
     private String imagePath;
 
     /**
+     * Stores the question category.
+     */
+    private Category category;
+
+    /**
      * Default constructor.
      */
     public Question() {
@@ -53,12 +59,13 @@ public final class Question {
     /**
      * Full filled constructor.
      */
-    public Question(String value, int correctAnswerIndex, Difficulty difficulty, Clue clue, List<Answer> answers,
-                    String imagePath) {
+    public Question(String value, int correctAnswerIndex, Difficulty difficulty, Clue clue,
+                    Category category, List<Answer> answers, String imagePath) {
         this.value = value;
         this.correctAnswerIndex = correctAnswerIndex;
         this.difficulty = difficulty;
         this.clue = clue;
+        this.category = category;
         this.answers = answers;
         this.imagePath = imagePath;
     }
@@ -165,5 +172,21 @@ public final class Question {
      */
     public Answer getCorrectAnswer() {
         return this.answers.get(this.correctAnswerIndex);
+    }
+
+    /**
+     * Gets the category attribute.
+     * @return The Category value of category attribute.
+     */
+    public Category getCategory() {
+        return this.category;
+    }
+
+    /**
+     * Sets the category attribute.
+     * @param newCategory The new Category value to set.
+     */
+    public void setCategory(Category newCategory) {
+        this.category = newCategory;
     }
 }

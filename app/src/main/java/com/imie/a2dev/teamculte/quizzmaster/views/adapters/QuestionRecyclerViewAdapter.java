@@ -76,7 +76,7 @@ public final class QuestionRecyclerViewAdapter extends RecyclerView.Adapter<Ques
          * @param question The question to display.
          */
         private void bind(Question question) {
-            this.txtQuestionNumber.setText(QuestionRecyclerViewAdapter.this.questions.indexOf(question));
+            this.txtQuestionNumber.setText(String.valueOf(QuestionRecyclerViewAdapter.this.questions.indexOf(question)));
             this.txtQuestion.setText(question.getValue());
         }
     }

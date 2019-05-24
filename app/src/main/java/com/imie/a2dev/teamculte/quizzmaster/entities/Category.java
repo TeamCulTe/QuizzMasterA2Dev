@@ -1,9 +1,11 @@
 package com.imie.a2dev.teamculte.quizzmaster.entities;
 
+import java.io.Serializable;
+
 /**
  * Class defining a category of question in the app.
  */
-public final class Category {
+public final class Category implements Serializable {
     /**
      * Stores the category name.
      */
