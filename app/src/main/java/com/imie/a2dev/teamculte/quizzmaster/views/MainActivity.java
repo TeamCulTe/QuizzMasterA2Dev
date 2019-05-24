@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                intent = new Intent(this, ShowScoresActivity.class);
             
             case R.id.btn_settings:
-//                intent = new Intent(this, SettingsActivity.class);
+                intent = new Intent(this, SettingsActivity.class);
                 
                 break;
              
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return;
         }
         
-//        this.startActivity(intent);
+        this.startActivity(intent);
     }
 
     /**
